@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="ed79adbe-0ac8-43ef-9f11-2d7e56edcda6" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ProjectId" id="1a884aLjA0uaekuNy139AS7BISF" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="js.phonegap.settings.workdir" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../UI" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Talon Ernst\Desktop\Final Project" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Talon Ernst\Desktop\Final Project\www" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="PhoneGap/Cordova run" type="PhoneGap" factoryName="PhoneGap/Cordova">
+      <option name="myExecutable" value="C:\Users\Talon Ernst\AppData\Roaming\npm\cordova.cmd" />
+      <option name="myWorkDir" value="$PROJECT_DIR$" />
+      <option name="myCommand" value="emulate" />
+      <option name="myPassParent" value="true" />
+      <option name="myPlatform" value="android" />
+      <option name="myExtraArgs" />
+      <option name="hasTarget" value="false" />
+      <option name="target" />
+      <method v="2">
+        <option name="PhonegapTask" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ed79adbe-0ac8-43ef-9f11-2d7e56edcda6" name="Default Changelist" comment="" />
+      <created>1586105669609</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1586105669609</updated>
+      <workItem from="1586105671514" duration="3621000" />
+      <workItem from="1586109317208" duration="5000" />
+      <workItem from="1586109718264" duration="6744000" />
+      <workItem from="1586116493847" duration="1456000" />
+      <workItem from="1586189143000" duration="212000" />
+      <workItem from="1586189583486" duration="93000" />
+      <workItem from="1586196062929" duration="665000" />
+      <workItem from="1586198752530" duration="3884000" />
+      <workItem from="1586202734792" duration="718000" />
+      <workItem from="1586226625581" duration="25000" />
+      <workItem from="1586388809386" duration="481000" />
+      <workItem from="1586398600291" duration="3101000" />
+      <workItem from="1586401724339" duration="698000" />
+      <workItem from="1586472060108" duration="18011000" />
+      <workItem from="1586540216267" duration="1422000" />
+      <workItem from="1586541658132" duration="1772000" />
+      <workItem from="1586543552359" duration="79000" />
+      <workItem from="1586547462259" duration="1334000" />
+      <workItem from="1586565956350" duration="40000" />
+      <workItem from="1586722747304" duration="596000" />
+      <workItem from="1586814919420" duration="601000" />
+      <workItem from="1586815665875" duration="214000" />
+      <workItem from="1586899007652" duration="490000" />
+      <workItem from="1586899579744" duration="423000" />
+      <workItem from="1586900620781" duration="709000" />
+      <workItem from="1586901834639" duration="2219000" />
+      <workItem from="1586989639330" duration="1559000" />
+      <workItem from="1587007164425" duration="2063000" />
+      <workItem from="1587011061019" duration="306000" />
+      <workItem from="1587053819620" duration="3286000" />
+      <workItem from="1587075510993" duration="2392000" />
+      <workItem from="1587083722106" duration="43000" />
+      <workItem from="1587249408730" duration="2837000" />
+      <workItem from="1587269552646" duration="339000" />
+      <workItem from="1587319746184" duration="885000" />
+      <workItem from="1587320774985" duration="36000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1587007940857">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1587007940857" />
+    <state width="1899" height="282" key="GridCell.Tab.0.bottom" timestamp="1586990434656">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1899" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1586990434656" />
+    <state width="1899" height="282" key="GridCell.Tab.0.center" timestamp="1586990434656">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1899" height="282" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1586990434656" />
+    <state width="1899" height="282" key="GridCell.Tab.0.left" timestamp="1586990434656">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1899" height="282" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1586990434656" />
+    <state width="1899" height="282" key="GridCell.Tab.0.right" timestamp="1586990434656">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1899" height="282" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1586990434656" />
+    <state x="616" y="240" key="run.anything.popup" timestamp="1586226646853">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1586226646853" />
+  </component>
+</project>

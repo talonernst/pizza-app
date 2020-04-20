@@ -1,0 +1,404 @@
+<!--
+Mobile web development 
+Index page for Final Project
+Created by: Talon Ernst/Taylor McVittie
+email:      ternst6858@conestogac.on.ca
+-->
+<!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+            <title>T & T Pizzeria</title>
+
+            <!--Jquery Files-->
+            <script src="js/lib/jquery-2.1.4.js"></script>
+            <script src="js/lib/jquery.mobile-1.4.5.js"></script>
+            <script src="js/lib/jquery.validate.js"></script>
+
+            <!--CSS Files-->
+            <link rel="stylesheet" type="text/css" href="css/lib/jquery.mobile-1.4.5.css">
+            <link rel="stylesheet" href="css/style.css">
+
+            <!--JavaScript Files-->
+            <script src="js/database.js"></script>
+            <script src="js/database_functions.js"></script>
+            <script src="js/facade.js"></script>
+            <script src="js/global.js"></script>
+            <script src="js/util.js"></script>
+        </head>
+        <body>
+            <div id="homePage" data-role="page">
+                <header data-role="header" data-theme="b" data-position="fixed">
+                    <h1>Welcome to T & Ts</h1>
+                    <div data-role="navbar">
+                        <ul>
+                            <li><a href="#homePage" class="ui-btn-active ui-state-persist" data-theme="b"
+                                   data-icon="home">Home</a></li>
+                            <li><a href="#orderPage" data-theme="b" data-icon="plus">Order</a></li>
+                            <li><a href="#reviewPage" data-theme="b" data-icon="grid">Reviews</a></li>
+                            <li><a href="#seeReviewPage" data-theme="b" data-icon="gear">Edit</a></li>
+                            <li><a href="#aboutPage" data-theme="b" data-icon="star">About</a></li>
+                        </ul>
+                    </div>
+                </header>
+                <section data-role="content">
+                    <br>
+                    <h1>Welcome to T & T Pizzeria!</h1>
+                    <div align="center">
+                        <img src="img/pizza-icon.png" width="80%" height="80%" alt="Pizza Slice">
+                    </div>
+                    <div class="line"></div><br>
+                    <h1>Decide how you want to order!</h1>
+                    <h1>Order on phone by calling 123-123-1234</h1>
+                    <button type="button" id="goToOrderPage" name="goToOrderPage" data-icon="arrow-r">Order Through App</button>
+                    <h1>Join our email list today!</h1>
+                    <button type="button" id="goToAboutPage" name="goToAboutPage" data-icon="arrow-r">Join Now!</button>
+                </section>
+                <footer data-role="footer" data-theme="b" data-position="fixed">
+                    <h1>T & T Pizzeria &copy;</h1>
+                </footer>
+            </div>
+
+
+            <!--Order Page-->
+            <div data-role="page" id="orderPage">
+                <header data-role="header" data-theme="b" data-position="fixed">
+                    <h1>Place an order!</h1>
+                    <div data-role="navbar">
+                        <ul>
+                            <li><a href="#homePage"  data-theme="b"
+                                   data-icon="home">Home</a></li>
+                            <li><a href="#orderPage" data-theme="b" data-icon="plus" class="ui-btn-active ui-state-persist">
+                                Order</a></li>
+                            <li><a href="#reviewPage" data-theme="b" data-icon="grid">Reviews</a></li>
+                            <li><a href="#seeReviewPage" data-theme="b" data-icon="gear">Edit</a></li>
+                            <li><a href="#aboutPage" data-theme="b" data-icon="star">About</a></li>
+                        </ul>
+                    </div>
+                </header>
+                <section data-role="content">
+                    <h1>Place an order</h1>
+                    <h1>Please complete the form below to place an order</h1>
+                    <form id="frmOrder">
+                        <div class="line"></div>
+                        <h1>Ordering Information</h1>
+                        <label for="orderName">Name: </label>
+                        <input type="text" id="orderName" name="orderName" placeholder="John Doe">
+
+                        <label for="orderPhoneNumber">Phone Number: </label>
+                        <input type="text" id="orderPhoneNumber" name="orderPhoneNumber" placeholder="123-123-1234">
+
+                        <label for="orderProvince">Province: </label>
+                        <select id="orderProvince">
+                            <option value="AB">Alberta</option>
+                            <option value="BC">British Columbia</option>
+                            <option value="MB">Manitoba</option>
+                            <option value="NB">New Brunswick</option>
+                            <option value="NL">NewFoundLand and Labrador</option>
+                            <option value="NT">North West Territories</option>
+                            <option value="NS">Nova Scotia</option>
+                            <option value="NU">Nunavut</option>
+                            <option value="ON" selected="selected">Ontario</option>
+                            <option value="PE">Prince Edward Island</option>
+                            <option value="QC">Quebec</option>
+                            <option value="SK">Saskatchewan</option>
+                            <option value="YT">Yukon</option>
+                        </select>
+
+                        <label for="deliveryType">Delivery Or Pickup: </label>
+                        <fieldset data-role="controlgroup" data-type="horizontal" id="deliveryType">
+                            <input type="radio" id="orderDelivery" name="orderType" value="Delivery" checked>
+                            <label for="orderDelivery">Delivery</label>
+
+                            <input type="radio" id="orderPickup" name="orderType" value="Pickup" >
+                            <label for="orderPickup">Pickup</label>
+                        </fieldset>
+                        <div id="orderDeliveryRequirements">
+                            <label for="orderAddress">Address: </label>
+                            <input type="text" id="orderAddress" name="orderAddress" placeholder="123 Apple St">
+
+                            <label for="orderCity">City: </label>
+                            <input type="text" id="orderCity" name="orderCity" placeholder="Kitchener">
+
+
+                            <label for="orderPostalCode">Postal Code: </label>
+                            <input type="text" id="orderPostalCode" name="orderPostalCode" placeholder="N2P3S7">
+
+                            <label for="orderDeliveryPayment">Payment Type: </label>
+                            <select id="orderDeliveryPayment">
+                                <option value="Debit" selected="selected">Debit</option>
+                                <option value="Credit">Credit</option>
+                                <option value="Cash">Cash</option>
+                            </select>
+                        </div>
+                        <div class="line"></div>
+                        <h1>Pizza Information</h1>
+                        <label for="orderPizzaType">Pizza Type: </label>
+                        <select id="orderPizzaType">
+                            <option value="Cheese" selected="selected">Cheese </option>
+                            <option value="Pepperoni">Pepperoni</option>
+                            <option value="Meat Lovers">Meat Lovers</option>
+                            <option value="Vegetarian">Vegetarian</option>
+                            <option value="Hawaiian">Hawaiian</option>
+                        </select>
+
+                        <label for="orderPizzaSize">Pizza Size: </label>
+                        <select id="orderPizzaSize">
+                            <option value="Small" selected="selected">Small</option>
+                            <option value="Medium">Medium</option>
+                            <option value="Large">Large</option>
+                            <option value="Extra Large">Extra Large</option>
+                        </select>
+
+                        <label for="orderQuantity">Quantity: </label>
+                        <input type="Number" id="orderQuantity" name="orderQuantity" value="1" placeholder="1">
+                        <div class="line"></div>
+                        <button type="button" id="reviewOrder" name="reviewOrder" data-theme="b" data-icon="shop">Review Order!</button>
+                    </form>
+                </section>
+                <footer data-role="footer" data-theme="b" data-position="fixed">
+                    <h1>T & T Pizzeria &copy;</h1>
+                </footer>
+            </div>
+
+
+            <!--See Order Page-->
+            <div data-role="page" id="seeOrderPage">
+                <header data-role="header" data-theme="b" data-position="fixed">
+                    <h1>Your Order</h1>
+                </header>
+                <section data-role="content">
+                    <h1>Please review your order below and decide what you want to do!</h1>
+                    <div class="line"></div>
+                    <ul id="lvViewOrder" data-role="listview" class="ui-listview-inset">
+
+                    </ul>
+                    <div class="line"></div>
+                    <button type="button" id="btnPlaceOrder" name="btnPlaceOrder" data-theme="b" data-icon="plus">Place Order</button>
+                    <button type="button" id="btnEditOrder" name="btnEditOrder" data-theme="b" data-icon="edit">Edit Order</button>
+                    <button type="button" id="btnHome" name="btnHome" data-theme="b" data-icon="back">Cancel & Go Home</button>
+
+                </section>
+                <footer  data-role="footer" data-theme="b" data-position="fixed">
+                    <h1>T & T Pizzeria</h1>
+                </footer>
+            </div>
+
+
+            <!--Review Page-->
+            <div data-role="page" id="reviewPage">
+                <header  data-role="header" data-theme="b" data-position="fixed">
+                    <h1>Add a review</h1>
+                    <div data-role="navbar">
+                        <ul>
+                            <li><a href="#homePage"  data-theme="b"
+                                   data-icon="home">Home</a></li>
+                            <li><a href="#orderPage" data-theme="b" data-icon="plus">
+                                Order</a></li>
+                            <li><a href="#reviewPage" data-theme="b" data-icon="grid" class="ui-btn-active ui-state-persist">Reviews</a></li>
+                            <li><a href="#seeReviewPage" data-theme="b" data-icon="gear">Edit</a></li>
+                            <li><a href="#aboutPage" data-theme="b" data-icon="star">About</a></li>
+                        </ul>
+                    </div>
+                </header>
+                <section data-role="content">
+                    <h1>Leave a review by filling out this form!</h1>
+                    <div class="line"></div><br>
+                    <form id="frmReview">
+                        <label for="reviewName">Name: </label>
+                        <input type="text" id="reviewName" name="reviewName" placeholder="John Doe">
+
+                        <label for="reviewComments">Extra Comments: </label>
+                        <textarea id="reviewComments" name="reviewComments" rows="2" cols="35">
+
+                                </textarea>
+
+                        <label for="reviewDate">Review Date: </label>
+                        <input type="text" id="reviewDate" name="reviewDate" disabled>
+
+
+                        <label for="reviewLiking">On a scale of 0-100, what did you think? </label>
+                        <input type="number" id="reviewLiking" name="reviewLiking" placeholder="50">
+
+                        <label for="reviewReturning">Do you plan on returning: </label>
+                        <fieldset data-role="controlgroup" data-type="horizontal" id="reviewReturning">
+                            <input type="radio" id="reviewYes" name="yesorno" value="Yes" checked>
+                            <label for="reviewYes">Yes</label>
+
+                            <input type="radio" id="reviewNo" name="yesorno" value="No" >
+                            <label for="reviewNo">No</label>
+                        </fieldset>
+
+                        <label for="reviewReferFriend">Do you plan on telling friends about us?</label>
+                        <input type="checkbox" id="reviewReferFriend" name="reviewReferFriend">
+
+                        <div class="line"></div>
+                        <button type="button" id="reviewSubmit" name="reviewSubmit" data-theme="b" data-icon="plus">Submit Review</button>
+                    </form>
+                </section>
+                <footer  data-role="footer" data-theme="b" data-position="fixed">
+                    <h1>T & T Pizzeria &copy;</h1>
+                </footer>
+            </div>
+
+
+            <!--See Reviews Page-->
+            <div data-role="page" id="seeReviewPage">
+                <header  data-role="header" data-theme="b" data-position="fixed">
+                    <h1>Edit a review</h1>
+                    <div data-role="navbar">
+                        <ul>
+                            <li><a href="#homePage"  data-theme="b"
+                                   data-icon="home">Home</a></li>
+                            <li><a href="#orderPage" data-theme="b" data-icon="plus">
+                                Order</a></li>
+                            <li><a href="#reviewPage" data-theme="b" data-icon="grid" >Reviews</a></li>
+                            <li><a href="#seeReviewPage" data-theme="b" data-icon="gear"
+                                   class="ui-btn-active ui-state-persist">Edit</a></li>
+                            <li><a href="#aboutPage" data-theme="b" data-icon="star">About</a></li>
+                        </ul>
+                    </div>
+                </header>
+                <section data-role="content">
+                    <h1>Please select your review to edit it!</h1>
+                    <div class="line"></div>
+                    <ul data-role="listview" class="ui-listview-inset" id="ReviewList" name="ReviewList">
+
+                    </ul>
+                    <h1>Below is a list of emails on the email list</h1>
+                    <div class="line"></div>
+                    <ul data-role="listview" class="ui-listview-inset" id="emailList" name="emailList">
+
+                    </ul>
+                </section>
+                <footer  data-role="footer" data-theme="b" data-position="fixed">
+                    <h1>T & T Pizzeria &copy;</h1>
+                </footer>
+            </div>
+
+
+            <!--Edit Reviews Page-->
+            <div data-role="page" id="editReviewsPage">
+                <header  data-role="header" data-theme="b" data-position="fixed">
+                    <h1>Edit your review!</h1>
+                </header>
+                <section  data-role="content">
+                    <h1>Please edit your review in any way you please!</h1>
+                    <div class="line"></div><br>
+                    <form id="frmEditReview">
+                        <label for="editReviewName">Name: </label>
+                        <input type="text" id="editReviewName" name="editReviewName">
+
+                        <label for="editReviewComments">Extra Comments: </label>
+                        <textarea id="editReviewComments" name="editReviewComments" rows="2" cols="35">
+
+                        </textarea>
+
+                        <label for="editReviewDate">Review Date(Automatically Updated): </label>
+                        <input type="text" id="editReviewDate" name="editReviewDate" disabled>
+
+                        <label for="editReviewLiking">On a scale of 0-100, what did you think? </label>
+                        <input type="number" id="editReviewLiking" name="editReviewLiking">
+
+                        <label for="editReviewReturning">Do you plan on returning: </label>
+                        <fieldset data-role="controlgroup" data-type="horizontal" id="editReviewReturning">
+                            <input type="radio" id="editReviewYes" name="edityesorno"  checked value="Yes">
+                            <label for="editReviewYes">Yes</label>
+
+                            <input type="radio" id="editReviewNo" name="edityesorno" value="No" >
+                            <label for="editReviewNo">No</label>
+                        </fieldset>
+
+                        <label for="editReviewReferFriend">Do you plan on telling friends about us?</label>
+                        <input type="checkbox" id="editReviewReferFriend" name="editReviewReferFriend">
+
+                        <div class="line"></div>
+                        <div align="center">
+                            <fieldset data-role="controlgroup" data-type="horizontal">
+                                <a href="#" data-role="button" data-icon="back" data-rel="back" data-theme="b">
+                                    Go Back</a>
+                                <button type="button" id="btnUpdate" name="btnUpdate" data-icon="check"
+                                        class="ui-btn-active">Update</button>
+                                <button type="button" id="btnDelete" name="btnDelete" data-icon="delete"
+                                        style="background-color: red">Delete</button>
+                            </fieldset>
+                        </div>
+                    </form>
+                </section>
+                <footer data-role="footer" data-theme="b" data-position="fixed">
+                    <h1>T & T Pizzeria &copy;</h1>
+                </footer>
+            </div>
+
+
+            <!--Current Email Page-->
+            <div data-role="page" id="currentEmailPage">
+                <header data-role="header" data-theme="b" data-position="fixed">
+                    <h1>Your email</h1>
+                </header>
+                <section data-role="content">
+                    <h1>This is your email on our Email List:</h1>
+                    <form id="frmCurrentEmail">
+                        <label for="currentEmail">Your email:</label>
+                        <input type="text" id="currentEmail" name="currentEmail">
+                    </form>
+                    <div align="center">
+                        <p>You will be receiving emails from us for promotional offers or any other useful things we may send.</p>
+                        <h1>Please decide what you want to do with your email.</h1>
+                        <fieldset data-role="controlgroup" data-type="horizontal">
+                            <a href="#" data-role="button" data-icon="back" data-rel="back" data-theme="b">
+                                Go Back</a>
+                            <button type="button" id="btnUpdateEmail" name="btnUpdate" data-icon="check"
+                                    class="ui-btn-active">Update</button>
+                            <button type="button" id="btnDeleteEmail" name="btnDelete" data-icon="delete"
+                                    style="background-color: red">Delete</button>
+                        </fieldset>
+                    </div>
+                </section>
+                <footer data-role="footer" data-theme="b" data-position="fixed">
+                    <h1>T & T Pizzeria &copy;</h1>
+                </footer>
+            </div>
+
+
+            <!--About Page-->
+            <div data-role="page" id="aboutPage">
+                <header  data-role="header" data-theme="b" data-position="fixed">
+                    <h1>About</h1>
+                    <div data-role="navbar">
+                        <ul>
+                            <li><a href="#homePage"  data-theme="b"
+                                   data-icon="home">Home</a></li>
+                            <li><a href="#orderPage" data-theme="b" data-icon="plus">
+                                Order</a></li>
+                            <li><a href="#reviewPage" data-theme="b" data-icon="grid" >Reviews</a></li>
+                            <li><a href="#seeReviewPage" data-theme="b" data-icon="gear" >Edit</a></li>
+                            <li><a href="#aboutPage" data-theme="b" data-icon="star" class="ui-btn-active ui-state-persist">
+                                About</a></li>
+                        </ul>
+                    </div>
+                </header>
+                <section data-role="content">
+                    <p>This app was made as a Final Project for Mobile Application class by Talon Ernst and Taylor McVittie</p>
+                    <h1>Contact The Developers:</h1>
+                    <div class="line"></div>
+                    <h2>Talon Ernst</h2>
+                    <p>Email: ternst6858@conestogac.on.ca</p>
+                    <div class="line"></div>
+                    <h2>Taylor McVittie</h2>
+                    <p>Email: tmvittie1153@conestogac.on.ca</p>
+                    <h1>Thank you for using our app! We appreciate the support!</h1>
+                    <div class="line"></div>
+                    <h1>Here is where you can be added to our email list</h1>
+                    <form id="frmEmail">
+                        <label for="email">Email:</label>
+                        <input type="text" id="email" name="email">
+                        <button type="button" id="addToEmailList" name="addToEmailList" class="ui-btn-active" data-icon="mail">Submit</button>
+                    </form>
+                </section>
+                <footer  data-role="footer" data-theme="b" data-position="fixed">
+                    <h1>T & T Pizzeria &copy;</h1>
+                </footer>
+            </div>
+        </body>
+    </html>

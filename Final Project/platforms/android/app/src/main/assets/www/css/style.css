@@ -1,0 +1,24 @@
+/*
+* File Name: style.css
+ *
+ * Revision History:
+ *       Talon Ernst/Taylor McVittie, 2020-04-04 : Created
+*/
+h1{
+    text-align: center;
+}
+
+label.error {
+    color: #F00;
+    font-weight: bold;
+}
+
+input.error,
+select.error,
+textarea.error {
+    border: 1px solid red;
+}
+
+.line{
+    border: 1px solid black;
+}
